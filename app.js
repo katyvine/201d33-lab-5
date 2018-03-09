@@ -16,6 +16,8 @@ function sum(a, b) { //eslint-disable-line
   // return an array
   return [sumOfTwoNums, sumString];
 }
+console.log (sum(4,7));
+
 
 // Here is the test for sum(); uncomment it to run it
 testSum(4, 7);
@@ -37,6 +39,8 @@ function multiply(a, b) { //eslint-disable-line
   return [productOfTwoNums, productString];
 }
 
+console.log (multiply(5,9));
+
 // Here is the test for multiply(); uncomment it to run it
 testMultiply(5,9);
 
@@ -55,11 +59,19 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
+  var sumOfThreeNum = sum(a,(sum(b,c))[0])[0];
+  var productOfThreeNum = multiply(a,(multiply(b,c))[0])[0];
+
+  var stringOfSum = a + ' and ' + b + ' and ' + c + ' sum to ' + sumOfThreeNum +'.';
+  var stringOfProduct = 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + productOfThreeNum +'.';
+
+  return [sumOfThreeNum, productOfThreeNum, stringOfSum, stringOfProduct];
 
 }
+console.log (sumAndMultiply(4,7,5));
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
-// testSumAndMultiply(4,7,5);
+testSumAndMultiply(4,7,5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
